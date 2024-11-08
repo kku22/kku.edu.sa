@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بوابة الطالب - جامعة الملك خالد </title>
+  <style>
+    /* تنسيق المظهر العام */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1000px; /* توسيع العرض الكامل */
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* تنسيق العناوين والأقسام */
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 10px;
+      color: #2e7d32; /* تغيير لون النص */
+    }
+
+    .section {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+      overflow-x: auto; /* تفعيل التمرير الأفقي إذا لزم الأمر */
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: #4caf50; /* تغيير لون العناوين */
+    }
+
+    /* تنسيق الجداول */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      padding: 12px; /* زيادة الحشو */
+      text-align: center;
+      word-wrap: break-word; /* لف النص داخل الخلايا */
+    }
+
+    th {
+      background-color: #4caf50; /* لون أعمدة الجداول */
+      color: #fff;
+    }
+
+    td {
+      border: 1px solid #ddd;
+    }
+
+    /* تنسيق جدول معلومات الطالبة */
+    .info-table {
+      border: 1px solid #000; /* إطار أسود حول الجدول */
+      margin-bottom: 20px;
+    }
+
+    .info-table td {
+      border: none; /* إزالة الحدود الداخلية */
+      padding: 10px;
+      text-align: right;
+    }
+
+    /* تنسيق الأزرار */
+    button {
+      background-color: #4caf50; /* اللون الأخضر لزر الإضافة */
+      color: #fff;
+      border: none;
+      padding: 6px 12px; /* زيادة الحشو */
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .delete-button {
+      background-color: #e74c3c; /* لون زر الحذف */
+    }
+
+    /* توسيع أعمدة الأزرار */
+    .wide-btn {
+      width: 100px;
+    }
+
+    /* تذييل الصفحة */
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f1f1f1; /* لون خلفية التذييل */
+      color: #555; /* لون النص */
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.svg" alt="شعار جامعة الملك خالد" style="display: block; margin: 0 auto; width: 100px;"> <!-- إضافة الشعار -->
+    <h1>بوابة الطالب - جامعة الملك خالد</h1>
+
+    <div class="section">
+      <h2>معلومات الطالب </h2>
+      <table class="info-table">
+        <tr>
+          <td>الاسم:</td>
+          <td>عبير عيسى طالع عسيري</td>
+        </tr>
+        <tr>
+          <td>رقم الهوية:</td>
+          <td>1063158354</td>
+        </tr>
+        <tr>
+          <td>الكلية:</td>
+          <td>العلوم</td>
+        </tr>
+        <tr>
+          <td>المستوى:</td>
+          <td>المستوى الأول</td>
+        </tr>
+        <tr>
+          <td>التخصص:</td>
+          <td>أحياء عامة</td>
+        </tr>
+        <tr>
+          <td>نوع الدراسة:</td>
+          <td>عن بُعد</td>
+        </tr>
+        <tr>
+          <td>الدرجة:</td>
+          <td>بكالوريوس</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>المقررات المتاحة</h2>
+      <table id="availableCourses">
+        <tr>
+          <th>اسم المقرر</th>
+          <th>رمز المقرر</th>
+          <th>عدد الوحدات</th>
+          <th>إجراء</th>
+        </tr>
+        <tr>
+          <td>برنامج اللغة الإنجليزية المكثف 1</td>
+          <td>6-011</td>
+          <td>6 وحدات</td>
+          <td><button class="wide-btn" onclick="addCourse(this)">إضافة</button></td>
+        </tr>
+        <tr>
+          <td>أحياء عامة</td>
+          <td>101-4</td>
+          <td>4 وحدات</td>
+          <td><button class="wide-btn" onclick="addCourse(this)">إضافة</button></td>
+        </tr>
+        <tr>
+          <td>حساب التفاضل والتكامل 1</td>
+          <td>101-3</td>
+          <td>3 وحدات</td>
+          <td><button class="wide-btn" onclick="addCourse(this)">إضافة</button></td>
+        </tr>
+        <tr>
+          <td>تطبيقات الحاسب الآلي</td>
+          <td>200-1</td>
+          <td>3 وحدات</td>
+          <td><button class="wide-btn" onclick="addCourse(this)">إضافة</button></td>
+        </tr>
+        <tr>
+          <td>علم الخلية</td>
+          <td>201-2</td>
+          <td>4 وحدات</td>
+          <td><button class="wide-btn" onclick="addCourse(this)">إضافة</button></td>
+        </tr>
+        <tr>
+          <td>طرائق التحرير العربي</td>
+          <td>202-1</td>
+          <td>2 وحدات</td>
+          <td><button class="wide-btn" onclick="addCourse(this)">إضافة</button></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>المقررات المسجلة</h2>
+      <table id="registeredCourses">
+        <tr>
+          <th>اسم المقرر</th>
+          <th>رمز المقرر</th>
+          <th>عدد الوحدات</th>
+          <th>إجراء</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    جميع الحقوق محفوظة لدى جامعة الملك خالد &copy; 2024
+  </footer>
+
+  <script>
+    // وظيفة لإضافة مقرر
+    function addCourse(button) {
+      const row = button.parentNode.parentNode;
+      const courseName = row.cells[0].innerText;
+      const courseCode = row.cells[1].innerText;
+      const courseUnits = row.cells[2].innerText;
+
+      // إنشاء صف جديد في جدول المقررات المسجلة
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td>${courseName}</td>
+        <td>${courseCode}</td>
+        <td>${courseUnits}</td>
+        <td><button class="delete-button wide-btn" onclick="deleteCourse(this)">حذف</button></td>
+      `;
+
+      // إضافة الصف الجديد إلى جدول المقررات المسجلة
+      document.getElementById('registeredCourses').appendChild(newRow);
+
+      // إزالة الصف من جدول المقررات المتاحة
+      row.parentNode.removeChild(row);
+    }
+
+    // وظيفة لحذف مقرر
+    function deleteCourse(button) {
+      const row = button.parentNode.parentNode;
+      const courseName = row.cells[0].innerText;
+      const courseCode = row.cells[1].innerText;
+      const courseUnits = row.cells[2].innerText;
+
+      // إنشاء صف جديد في جدول المقررات المتاحة
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td>${courseName}</td>
+        <td>${courseCode}</td>
+        <td>${courseUnits}</td>
+        <td><button class="wide-btn" onclick="addCourse(this)">إضافة</button></td>
+      `;
+
+      // إضافة الصف الجديد إلى جدول المقررات المتاحة
+      document.getElementById('availableCourses').appendChild(newRow);
+
+      // إزالة الصف من جدول المقررات المسجلة
+      row.parentNode.removeChild(row);
+    }
+  </script>
+</body>
+</html>
